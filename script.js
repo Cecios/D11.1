@@ -52,7 +52,7 @@ let finish = 6
 for (let j = 0; j < carousel_1_item.length; j++) {
 
    tmpMovies = movies.slice(start, finish)
-    console.log(tmpMovies.length / 6)
+    // console.log(tmpMovies.length / 6)
    if(tmpMovies.length / 6 < 1) {
         for (let i = 0; i < tmpMovies.length; i++) {
 
@@ -62,7 +62,6 @@ for (let j = 0; j < carousel_1_item.length; j++) {
             //movies_2.push(tmpMovies[i]);
             //movies.splice(0,1);
         }  
-            //shuffle(movies_2)
             break;
    }
    else {
@@ -74,41 +73,13 @@ for (let j = 0; j < carousel_1_item.length; j++) {
         //movies_2.push(tmpMovies[i]);
         //movies.splice(0,1);
     }  
-    //shuffle(movies_2)
+
    }
 
    start = finish++
    finish =  finish + 5
 }
 
-
-// for (let j = 0; j < carousel_1_item.length; j++) {
-//     console.
-//     tmpMovies = movies.slice(0, 5)
-//     for (let i = 0; i < 6; i++) {
-
-//         carousel_1_item[j].innerHTML += `<div style="padding: 1px;" class="col-2"><img class="w-100" src="${movies[0].src}" alt=""></div>`
-//         movies_2.push(movies[0]);
-//         movies.splice(0,1);
-//     }  
-//     shuffle(movies_2)
-// }
-// for (let j = 0; j < carousel_2_item.length; j++) {
-//     for (let i = 0; i < 6; i++) {
-//         carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="col-2"><img class="w-100" src="${movies_2[0].src}" alt=""></div>`
-//         movies.push(movies_2[0]);
-//         movies_2.splice(0,1);
-//     }
-//     shuffle(movies)
-// }
-// for (let j = 0; j < carousel_3_item.length; j++) {
-//     for (let i = 0; i < 6; i++) {
-
-//         carousel_3_item[j].innerHTML += `<div style="padding: 1px;" class="col-2"><img class="w-100" src="${movies[0].src}" alt=""></div>`
-//         movies_2.push(movies[0]);
-//         movies.splice(0,1);
-//     }  
-// }
 //  FOOTER
 for (let i = 0; i < footer_subscr.length; i++) {
     footer_dscr.innerHTML += `<div class="col-3 text-nowrap">${footer_subscr[i].p}</div>`
@@ -118,16 +89,15 @@ for (let i = 0; i < footer_subscr.length; i++) {
 //BOTTONE GENRES
 const genres = document.querySelectorAll('.jumbotron .dropdown-menu li a')
 const films = document.querySelectorAll('#section_1 .movies img')
+const button_genres = document.querySelector('.jumbotron button span')
 const order_genres = function(event){
-
-    // console.log(event.target.innerHTML)   && movies[j].genres.includes(event.target.innerHTML);
 
     for (let i = 0; i < films.length; i++) {
 
         for (let j = 0; j < movies.length; j++) {
             if (films[i].src.toLowerCase().includes(movies[j].movie.toLowerCase())) {
                 //  console.log(movies[j].genres.includes(event.target.innerHTML));
-                console.log("si "+'i= '+i+' j= '+j + ' genere= '+movies[j].genres.includes(event.target.innerHTML) + ' genere array: '+movies[j].genres + ' genere HTML'+event.target.innerHTML);
+                // console.log("si "+'i= '+i+' j= '+j + ' genere= '+movies[j].genres.includes(event.target.innerHTML) + ' genere array: '+movies[j].genres + ' genere HTML'+event.target.innerHTML);
                 if (movies[j].genres.includes(event.target.innerHTML)) {
                     films[i].parentElement.style.order = '1';
                 }
@@ -138,16 +108,15 @@ const order_genres = function(event){
                 break;
             }
             else {
-                console.log("no "+'i= '+i+' j= '+j);
+                // console.log("no "+'i= '+i+' j= '+j);
             }
         }
 
     }
-
+    button_genres.innerHTML = event.target.innerHTML
 }
-
 for (let i = 0; i < genres.length; i++) {
     genres[i].onclick = order_genres 
 }
-// console.log(genres);
+
 

@@ -67,6 +67,9 @@ footer button{
     color: #808080;
     background-color: #141414;
     border: solid 1px #808080;
+    display: flex;
+    padding-block: 1px;
+    padding-inline: 4px;
 }
 section[id^="section_"] h6, footer ion-icon{
     font-size: small;
