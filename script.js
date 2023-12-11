@@ -38,6 +38,7 @@ const carousel_1_item = document.querySelectorAll('#section_1 .carousel-item .ro
 const carousel_2_item = document.querySelectorAll('#section_2 .carousel-item .row')
 const carousel_3_item = document.querySelectorAll('#section_3 .carousel-item .row')
 const footer_dscr = document.querySelector('footer .dscr')
+
 let shuffle = function(array){
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -45,7 +46,6 @@ let shuffle = function(array){
         [array[i], array[j]] = [array[j], array[i]];
       }
 }
-
 let tmpMovies = []
 let start = 0
 let finish = 6
@@ -55,31 +55,60 @@ for (let j = 0; j < carousel_1_item.length; j++) {
     // console.log(tmpMovies.length / 6)
    if(tmpMovies.length / 6 < 1) {
         for (let i = 0; i < tmpMovies.length; i++) {
-
             carousel_1_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-            carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-            carousel_3_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-            //movies_2.push(tmpMovies[i]);
-            //movies.splice(0,1);
         }  
             break;
    }
    else {
     for (let i = 0; i < 6; i++) {
-
         carousel_1_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-        carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-        carousel_3_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
-        //movies_2.push(tmpMovies[i]);
-        //movies.splice(0,1);
     }  
-
    }
-
    start = finish++
    finish =  finish + 5
 }
+shuffle(movies)
+start = 0;
+finish = 6;
+for (let j = 0; j < carousel_2_item.length; j++) {
 
+    tmpMovies = movies.slice(start, finish)
+     // console.log(tmpMovies.length / 6)
+    if(tmpMovies.length / 6 < 1) {
+         for (let i = 0; i < tmpMovies.length; i++) {
+             carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
+         }  
+             break;
+    }
+    else {
+     for (let i = 0; i < 6; i++) {
+         carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
+     }  
+    }
+    start = finish++
+    finish =  finish + 5
+ }
+ shuffle(movies)
+start = 0;
+finish = 6;
+for (let j = 0; j < carousel_3_item.length; j++) {
+
+    tmpMovies = movies.slice(start, finish)
+     // console.log(tmpMovies.length / 6)
+    if(tmpMovies.length / 6 < 1) {
+         for (let i = 0; i < tmpMovies.length; i++) {
+             carousel_2_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
+         }  
+             break;
+    }
+    else {
+     for (let i = 0; i < 6; i++) {
+         carousel_3_item[j].innerHTML += `<div style="padding: 1px;" class="movies col-2"><img class="w-100" src="${tmpMovies[i].src}" alt=""></div>`
+     }  
+    }
+    start = finish++
+    finish =  finish + 5
+ }
 //  FOOTER
 for (let i = 0; i < footer_subscr.length; i++) {
     footer_dscr.innerHTML += `<div class="col-3 text-nowrap">${footer_subscr[i].p}</div>`
