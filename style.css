@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&family=Open+Sans:wght@400;600;800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
+body{
+    background-color: #141414;
+    margin: 0;
+}
+.xx-small{
+    font-size: xx-small;
+}
+.x-small{
+    font-size: x-small;
+}
+.small{
+    font-size: small;
+}
+.navbar a{
+    color: #F9F9F9!important;
+    /* font-size: clamp(0.6rem,0.5vw,0.9rem); */
+    font-size: xx-small;
+}
+.navbar-brand img{
+    width: 70px;
+    height: 30px;
+    object-fit: contain;
+}
+.avatar{
+    position: relative;
+}
+.w-90{
+    width: 90%;
+}
+.avatar img{
+    width: 20px;
+    height: 20px;
+}
+#user{
+    font-size: xx-small;
+    color: white;
+    position: absolute;
+    left: 25px;
+}
+.jumbotron button{
+    background-color: #141414;
+    border: solid 1px white;
+    color: white;
+}
+.jumbotron .dropdown button{
+    background-color: black;
+}
+.dropdown ul{
+    background-color: black!important;
+}
+.dropdown-menu a:hover{
+    background-color: gray;
+}
+footer{
+    color: #808080;
+}
+footer .dscr{
+    font-size: xx-small;
+    font-size: clamp(0.3rem,0.5vw,0.7rem);
+}
+footer button{
+    font-size: xx-small;
+    color: #808080;
+    background-color: #141414;
+    border: solid 1px #808080;
+}
+section[id^="section_"] h6, footer ion-icon{
+    font-size: small;
+}
